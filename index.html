@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Child Buddy - Parents Are The Real Therapists | Reflex Integration & Child Development</title>
+  <meta name="description" content="Empower yourself as your child's primary therapist. Learn reflex integration, assessment tools, and daily exercises for autism, ADHD, and developmental delays." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #9333ea;
+      --primary-dark: #7e22ce;
+      --secondary: #ec4899;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --bg-gradient-start: #fdf4ff;
+      --bg-gradient-end: #fce7f3;
+      --white: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --success: #10b981;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      min-height: 100vh;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(147, 51, 234, 0.3);
+    }
+
+    /* Main Navigation */
+    .main-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1));
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white !important;
+      padding: 0.6rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(147, 51, 234, 0.3);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4);
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: 0.7rem 1.2rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-link:hover {
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));
+      color: var(--primary);
+    }
+
+    .dropdown-link:first-child {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .dropdown-link:last-child {
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(147, 51, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, var(--accent), #10b981);
+      color: white;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Three Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .pillar {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .pillar-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .pillar h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Assessment Form */
+    .assessment-form {
+      background: linear-gradient(135deg, white, rgba(147, 51, 234, 0.02));
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid rgba(147, 51, 234, 0.2);
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem;
+      background: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .checkbox-item:hover {
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+    }
+
+    /* Accordion */
+    .accordion {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid rgba(147, 51, 234, 0.1);
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-header {
+      padding: 1.5rem;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
+      font-weight: 600;
+    }
+
+    .accordion-header:hover {
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));
+    }
+
+    .accordion-content {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 600px;
+      padding: 1.5rem;
+    }
+
+    .accordion-arrow {
+      transition: transform 0.3s;
+      color: var(--primary);
+    }
+
+    .accordion-item.active .accordion-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      max-width: 400px;
+      position: relative;
+    }
+
+    .timeline-number {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(147, 51, 234, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 5px;
+      animation: fillProgress 1s ease-out;
+    }
+
+    @keyframes fillProgress {
+      from { width: 0; }
+      to { width: var(--progress); }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 30px;
+      padding: 4rem;
+      text-align: center;
+      color: white;
+      margin: 4rem 0;
+    }
+
+    .cta-section h2 {
+      color: white;
+      -webkit-text-fill-color: white;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      border-top: 1px solid rgba(147, 51, 234, 0.1);
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .pillars, .stats, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container nav-wrapper">
+      <div class="logo">
+        <div class="logo-icon">
+          <span style="color: white;">✨</span>
+        </div>
+        Smart Child Buddy
+      </div>
+      
+      <div class="main-nav">
+        <div class="nav-item">
+          <a href="#home" class="nav-link">HOME</a>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#why-parents" class="nav-link">WHY PARENTS <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#philosophy" class="dropdown-link">Our Philosophy</a>
+            <a href="#parent-role" class="dropdown-link">Parent vs Professional</a>
+            <a href="#success-stories" class="dropdown-link">Success Stories</a>
+            <a href="#science" class="dropdown-link">The Science</a>
+            <a href="#daily-impact" class="dropdown-link">Daily Impact</a>
+          </div>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#reflex-academy" class="nav-link">REFLEX ACADEMY <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#what-are-reflexes" class="dropdown-link">What Are Reflexes?</a>
+            <a href="#test-at-home" class="dropdown-link">Test at Home</a>
+            <a href="#reflex-library" class="dropdown-link">Reflex Library</a>
+            <a href="#red-flags" class="dropdown-link">Red Flags Checklist</a>
+            <a href="#progress-tracking" class="dropdown-link">Progress Tracking</a>
+          </div>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#assessment" class="nav-link">ASSESSMENT <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#free-assessment" class="dropdown-link">Free 5-Min Assessment</a>
+            <a href="#detailed-assessment" class="dropdown-link">Detailed Analysis</a>
+            <a href="#age-specific" class="dropdown-link">Age-Specific Tests</a>
+            <a href="#action-plans" class="dropdown-link">Custom Action Plans</a>
+          </div>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#exercises" class="nav-link">EXERCISES <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#daily-exercises" class="dropdown-link">Daily Exercises</a>
+            <a href="#morning-routines" class="dropdown-link">Morning Routines</a>
+            <a href="#calming-activities" class="dropdown-link">Calming Activities</a>
+            <a href="#brain-gym" class="dropdown-link">Brain Gym</a>
+            <a href="#sensory-diet" class="dropdown-link">Sensory Diet Plans</a>
+          </div>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#resources" class="nav-link">RESOURCES <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#smart-calendar" class="dropdown-link">Smart Calendar</a>
+            <a href="#progress-tracker" class="dropdown-link">Progress Tracker</a>
+            <a href="#visual-schedules" class="dropdown-link">Visual Schedules</a>
+            <a href="#parent-guides" class="dropdown-link">Parent Guides</a>
+            <a href="#products" class="dropdown-link">Recommended Products</a>
+          </div>
+        </div>
+        
+        <div class="nav-item">
+          <a href="#holistic" class="nav-link">HOLISTIC <span style="font-size: 0.8rem;">▼</span></a>
+          <div class="dropdown">
+            <a href="#red-light" class="dropdown-link">Red Light Therapy</a>
+            <a href="#nutrition" class="dropdown-link">Brain Nutrition</a>
+            <a href="#sleep" class="dropdown-link">Sleep Optimization</a>
+            <a href="#mindfulness" class="dropdown-link">Mindfulness for Kids</a>
+            <a href="#environment" class="dropdown-link">Sensory Spaces</a>
+          </div>
+        </div>
+        
+        <a href="#contact" class="nav-link nav-cta">START NOW</a>
+      </div>
+      
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container" id="home">
+    <div class="hero-badge">
+      ✨ The Only Assessment That Finds The ROOT CAUSE
+    </div>
+    
+    <h1>Transform Your Child's Development<br>in 15 Minutes a Day</h1>
+    
+    <p class="hero-subtitle">
+      <strong>Parents Are The Real Therapists</strong> - We Show You How<br>
+      95% of developmental delays stem from retained reflexes others miss
+    </p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
+      <a href="#free-assessment" class="btn btn-primary">Start Free Assessment →</a>
+      <a href="#reflex-academy" class="btn btn-secondary">Learn About Reflexes</a>
+    </div>
+    
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Issues from Retained Reflexes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">15min</div>
+        <div class="stat-label">Daily Time Needed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2-4wks</div>
+        <div class="stat-label">To See Results</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">10,000+</div>
+        <div class="stat-label">Families Helped</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Pillars -->
+  <section class="section container">
+    <div class="section-header">
+      <h2>Your Journey to Success</h2>
+      <p class="section-subtitle">Three simple steps to transform your child's development</p>
+    </div>
+    
+    <div class="pillars">
+      <div class="pillar card">
+        <div class="pillar-icon">🧠</div>
+        <h3>1. Understand</h3>
+        <p>Learn about primitive reflexes and how they affect your child's behavior, speech, and development.</p>
+        <a href="#reflex-academy" class="btn btn-secondary" style="margin-top: 1rem;">Explore Reflexes</a>
+      </div>
+      
+      <div class="pillar card">
+        <div class="pillar-icon">🎯</div>
+        <h3>2. Assess</h3>
+        <p>Use our smart assessment to identify retained reflexes and get a personalized action plan.</p>
+        <a href="#free-assessment" class="btn btn-primary" style="margin-top: 1rem;">Start Assessment</a>
+      </div>
+      
+      <div class="pillar card">
+        <div class="pillar-icon">💪</div>
+        <h3>3. Act Daily</h3>
+        <p>Follow simple 15-minute daily exercises designed specifically for your child's needs.</p>
+        <a href="#exercises" class="btn btn-success" style="margin-top: 1rem;">See Exercises</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Parents First Section -->
+  <section class="section" style="background: white;" id="why-parents">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Parents Are The Real Therapists</h2>
+        <p class="section-subtitle">You spend 3,000+ hours yearly with your child. Therapists see them for 50.</p>
+      </div>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-bottom: 1rem;">The Parent Advantage</h3>
+          <ul style="padding-left: 1.5rem; line-height: 2;">
+            <li><strong>Daily Consistency:</strong> You're there every day, not just weekly sessions</li>
+            <li><strong>Natural Environment:</strong> Real progress happens at home, not in clinics</li>
+            <li><strong>Deep Understanding:</strong> You know your child's triggers and motivators</li>
+            <li><strong>Love & Connection:</strong> Your bond creates safety for growth</li>
+            <li><strong>Cost-Effective:</strong> Save $15,000+ yearly on therapy costs</li>
+          </ul>
+        </div>
+        
+        <div class="card" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));">
+          <h3 style="margin-bottom: 1rem;">Our Philosophy</h3>
+          <p style="margin-bottom: 1rem;">
+            <strong>"Parents Lead, Professionals Support"</strong>
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.8;">
+            We believe parents are capable of creating profound change when given the right knowledge and tools. 
+            Professional therapists are valuable partners, but YOU are the constant in your child's life. 
+            We empower you with science-based techniques that work in real life, not just in therapy rooms.
+          </p>
+          <a href="#philosophy" class="btn btn-primary" style="margin-top: 1.5rem;">Learn Our Approach</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflex Academy Section -->
+  <section class="section container" id="reflex-academy">
+    <div class="section-header">
+      <h2>Reflex Academy</h2>
+      <p class="section-subtitle">Master the science of primitive reflexes and unlock your child's potential</p>
+    </div>
+    
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>What Are Reflexes?</h3>
+        <p>Primitive reflexes are automatic movements that should integrate by age 1. When retained, they cause developmental delays.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Test at Home</h3>
+        <p>Simple 5-minute tests you can do at home to identify which reflexes are affecting your child.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Complete Library</h3>
+        <p>Detailed guides on all 7 major reflexes, their symptoms, and integration exercises.</p>
+      </div>
+    </div>
+    
+    <!-- Reflex Library -->
+    <h3 style="margin: 3rem 0 2rem; text-align: center;">The 7 Major Primitive Reflexes</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Moro Reflex</strong> - The Startle Response</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> The infant startle response that should integrate by 4-6 months.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Anxiety and emotional outbursts</li>
+            <li>Sensitivity to light, sound, touch</li>
+            <li>Motion sickness</li>
+            <li>Poor impulse control</li>
+            <li>Difficulty with transitions</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Deep pressure, rhythmic rocking, starfish exercise, breathing techniques</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>ATNR</strong> - Asymmetrical Tonic Neck Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> When head turns, same-side arm extends, opposite arm bends.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor handwriting and fine motor skills</li>
+            <li>Difficulty crossing midline</li>
+            <li>Reading and tracking problems</li>
+            <li>Poor hand-eye coordination</li>
+            <li>Balance issues</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Cross-crawl, lazy 8s, midline crossing activities</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>STNR</strong> - Symmetrical Tonic Neck Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Head position affects arm and leg tone when on hands and knees.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor posture (slumping at desk)</li>
+            <li>Messy eating habits</li>
+            <li>Difficulty sitting still</li>
+            <li>W-sitting position</li>
+            <li>Clumsiness</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Cat-cow stretches, crawling games, wall push-ups</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Spinal Galant</strong> - Back Sensitivity Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Stroking the lower back causes hip rotation to same side.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Bedwetting past age 5</li>
+            <li>Fidgeting and hyperactivity</li>
+            <li>Attention difficulties</li>
+            <li>Sensitivity to clothing tags/waistbands</li>
+            <li>Poor concentration when sitting</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Snow angels, back brushing, swimming movements</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>TLR</strong> - Tonic Labyrinthine Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Head position affects muscle tone throughout body.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor balance and coordination</li>
+            <li>Motion sickness</li>
+            <li>Difficulty judging space and distance</li>
+            <li>Poor muscle tone</li>
+            <li>Difficulty with sequencing</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Rolling activities, balance board, vestibular activities</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Palmar & Plantar</strong> - Grasp Reflexes</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Automatic grasping when palm or sole is touched.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor pencil grip</li>
+            <li>Messy handwriting</li>
+            <li>Speech articulation issues</li>
+            <li>Toe walking</li>
+            <li>Difficulty with fine motor tasks</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Hand exercises, barefoot activities, finger games</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Rooting & Suck</strong> - Oral Reflexes</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Infant feeding reflexes for survival.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Speech delays and articulation problems</li>
+            <li>Picky eating or texture issues</li>
+            <li>Drooling past appropriate age</li>
+            <li>Thumb sucking past age 5</li>
+            <li>Difficulty with oral motor control</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Oral motor exercises, blowing activities, chewing exercises</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Hub -->
+  <section class="section" style="background: white;" id="assessment">
+    <div class="container">
+      <div class="section-header">
+        <h2>Smart Assessment Hub</h2>
+        <p class="section-subtitle">Get a personalized roadmap for your child's development</p>
+      </div>
+      
+      <div class="grid-2">
+        <div class="assessment-form" id="free-assessment">
+          <h3 style="margin-bottom: 1.5rem;">Quick 5-Minute Assessment</h3>
+          
+          <form onsubmit="event.preventDefault(); showResults();">
+            <div class="form-group">
+              <label>Child's Name</label>
+              <input type="text" placeholder="Enter name" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Child's Age</label>
+              <select required>
+                <option>Select age range</option>
+                <option>2-3 years</option>
+                <option>4-5 years</option>
+                <option>6-7 years</option>
+                <option>8-10 years</option>
+                <option>11+ years</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>Primary Concerns (Check all that apply)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item">
+                  <input type="checkbox"> Speech delays
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Behavior issues
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Motor skills
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Attention/focus
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Sensory sensitivities
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Social skills
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Academic struggles
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox"> Anxiety/emotions
+                </label>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Get Free Assessment Results →
+            </button>
+          </form>
+        </div>
+        
+        <div class="card" id="assessment-results" style="display: none;">
+          <h3>Your Assessment Results</h3>
+          
+          <div style="margin: 2rem 0;">
+            <p style="font-weight: 600; margin-bottom: 0.5rem;">Reflex Integration Level</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="--progress: 65%;"></div>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">65% - Moderate retention detected</p>
+          </div>
+          
+          <div style="margin: 2rem 0;">
+            <h4 style="margin-bottom: 1rem;">Likely Retained Reflexes:</h4>
+            <ul style="padding-left: 1.5rem;">
+              <li><strong>Moro Reflex</strong> - Contributing to anxiety and sensory issues</li>
+              <li><strong>ATNR</strong> - Affecting fine motor and academic skills</li>
+              <li><strong>Spinal Galant</strong> - Causing attention and fidgeting issues</li>
+            </ul>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); padding: 1rem; border-radius: 10px;">
+            <h4 style="margin-bottom: 0.5rem;">Recommended Daily Plan:</h4>
+            <p style="font-size: 0.9rem;">15 minutes daily: 5 min reflexes + 5 min sensory + 5 min speech/motor</p>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <a href="#smart-calendar" class="btn btn-success" style="width: 100%;">
+              Create My Smart Calendar →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exercise Library -->
+  <section class="section container" id="exercises">
+    <div class="section-header">
+      <h2>Exercise & Activity Library</h2>
+      <p class="section-subtitle">Simple, fun exercises that integrate reflexes and improve development</p>
+    </div>
+    
+    <h3 style="margin-bottom: 2rem;">Daily Exercise Categories</h3>
+    
+    <div class="grid-4">
+      <div class="feature-card">
+        <div class="feature-icon">🌅</div>
+        <h4>Morning Wake-Up</h4>
+        <p style="font-size: 0.9rem;">5-minute energizing routine</p>
+        <ul style="font-size: 0.85rem; padding-left: 1.2rem; margin-top: 0.5rem;">
+          <li>Cat-Cow stretches</li>
+          <li>Cross-crawl march</li>
+          <li>Deep breathing</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h4>Focus Boosters</h4>
+        <p style="font-size: 0.9rem;">Before homework/meals</p>
+        <ul style="font-size: 0.85rem; padding-left: 1.2rem; margin-top: 0.5rem;">
+          <li>Wall push-ups</li>
+          <li>Chair squats</li>
+          <li>Finger exercises</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">😌</div>
+        <h4>Calming Activities</h4>
+        <p style="font-size: 0.9rem;">For meltdown prevention</p>
+        <ul style="font-size: 0.85rem; padding-left: 1.2rem; margin-top: 0.5rem;">
+          <li>Deep pressure hugs</li>
+          <li>Rocking movements</li>
+          <li>Weighted activities</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h4>Brain Gym</h4>
+        <p style="font-size: 0.9rem;">Cognitive enhancement</p>
+        <ul style="font-size: 0.85rem; padding-left: 1.2rem; margin-top: 0.5rem;">
+          <li>Lazy 8s tracing</li>
+          <li>Balance challenges</li>
+          <li>Midline crossing</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Sample Exercise Cards -->
+    <h3 style="margin: 3rem 0 2rem;">Top 6 Essential Exercises</h3>
+    
+    <div class="grid-3">
+      <div class="card">
+        <h4>🐱 Cat-Cow Stretch</h4>
+        <p><strong>Time:</strong> 60-90 seconds</p>
+        <p><strong>Benefits:</strong> Integrates STNR, improves posture, builds core strength</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">On hands and knees, alternate between arching and rounding your back slowly.</p>
+      </div>
+      
+      <div class="card">
+        <h4>🚶 Cross-Crawl</h4>
+        <p><strong>Time:</strong> 60-90 seconds</p>
+        <p><strong>Benefits:</strong> Integrates ATNR, improves coordination, enhances learning</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Touch opposite elbow to knee while marching in place rhythmically.</p>
+      </div>
+      
+      <div class="card">
+        <h4>⭐ Starfish</h4>
+        <p><strong>Time:</strong> 5 repetitions</p>
+        <p><strong>Benefits:</strong> Integrates Moro, reduces anxiety, improves emotional regulation</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Lie on back, spread limbs wide, then curl into ball. Repeat slowly.</p>
+      </div>
+      
+      <div class="card">
+        <h4>🏠 Wall Push-Ups</h4>
+        <p><strong>Time:</strong> 10 repetitions</p>
+        <p><strong>Benefits:</strong> Proprioceptive input, calms nervous system, builds strength</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Stand arm's length from wall, lean in and push back slowly.</p>
+      </div>
+      
+      <div class="card">
+        <h4>♾️ Lazy 8s</h4>
+        <p><strong>Time:</strong> 2 minutes</p>
+        <p><strong>Benefits:</strong> Visual tracking, reading preparation, calms mind</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Trace large figure-8 pattern sideways with finger, following with eyes.</p>
+      </div>
+      
+      <div class="card">
+        <h4>🌊 Rocking</h4>
+        <p><strong>Time:</strong> 2-3 minutes</p>
+        <p><strong>Benefits:</strong> Vestibular input, emotional regulation, sleep preparation</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Gentle rhythmic rocking in chair or on floor, forward and back.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Resources -->
+  <section class="section" style="background: white;" id="resources">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tools & Resources</h2>
+        <p class="section-subtitle">Everything you need to succeed as your child's therapist</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="card" id="smart-calendar">
+          <div class="feature-icon">📅</div>
+          <h3>Smart Calendar</h3>
+          <p>AI-powered scheduling that integrates exercises into your daily routine. Get reminders and track completion.</p>
+          <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Setup Calendar</a>
+        </div>
+        
+        <div class="card">
+          <div class="feature-icon">📊</div>
+          <h3>Progress Tracker</h3>
+          <p>Visual charts showing improvements in speech, behavior, motor skills, and reflex integration over time.</p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem;">Track Progress</a>
+        </div>
+        
+        <div class="card">
+          <div class="feature-icon">🎯</div>
+          <h3>Visual Schedules</h3>
+          <p>Printable first-then cards, daily routine charts, and behavior support visuals for smooth transitions.</p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem;">Get Visuals</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Holistic Wellness -->
+  <section class="section container" id="holistic">
+    <div class="section-header">
+      <h2>Holistic Wellness Approach</h2>
+      <p class="section-subtitle">Supporting development from every angle</p>
+    </div>
+    
+    <div class="grid-2">
+      <div class="card" id="red-light">
+        <h3>🔴 Red Light Therapy</h3>
+        <p style="margin-bottom: 1rem;">Low-level light therapy showing promise for:</p>
+        <ul style="padding-left: 1.5rem;">
+          <li>Improved cellular energy</li>
+          <li>Reduced inflammation</li>
+          <li>Better sleep quality</li>
+          <li>Enhanced mood and focus</li>
+          <li>Faster recovery and healing</li>
+        </ul>
+        <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+          <p style="font-size: 0.9rem;"><strong>Note:</strong> Consult your pediatrician before starting any light therapy.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>🥗 Brain Nutrition</h3>
+        <p style="margin-bottom: 1rem;">Essential nutrients for development:</p>
+        <ul style="padding-left: 1.5rem;">
+          <li><strong>Omega-3s:</strong> Fish oil for brain function</li>
+          <li><strong>Magnesium:</strong> Calming and focus</li>
+          <li><strong>B-Vitamins:</strong> Energy and mood</li>
+          <li><strong>Probiotics:</strong> Gut-brain connection</li>
+          <li><strong>Vitamin D:</strong> Overall development</li>
+        </ul>
+        <a href="#nutrition" class="btn btn-success" style="margin-top: 1rem;">Nutrition Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Timeline -->
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your Success Timeline</h2>
+        <p class="section-subtitle">What to expect on your journey</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-number">1</div>
+            <h4>Week 1-2: Foundation</h4>
+            <p>Learn exercises, establish routine, see initial engagement improvements</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-number">2</div>
+            <h4>Week 3-4: Progress</h4>
+            <p>Notice better focus, reduced meltdowns, improved coordination</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-number">3</div>
+            <h4>Month 2-3: Transformation</h4>
+            <p>Significant improvements in speech, behavior, and academic performance</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-number">4</div>
+            <h4>Month 4+: Mastery</h4>
+            <p>Sustained progress, increased independence, continued development</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <div class="container">
+    <div class="cta-section">
+      <h2>Ready to Transform Your Child's Life?</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+        Join 10,000+ parents who've discovered they ARE the solution
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="#free-assessment" class="btn btn-secondary" style="background: white; color: var(--primary);">
+          Start Free Assessment
+        </a>
+        <a href="#contact" class="btn btn-primary" style="background: rgba(255,255,255,0.2); border: 2px solid white;">
+          Book Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="section container" id="contact">
+    <div class="section-header">
+      <h2>Get Started Today</h2>
+      <p class="section-subtitle">Questions? Need support? We're here to help!</p>
+    </div>
+    
+    <div class="grid-2">
+      <div class="card">
+        <h3>Contact Us</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you within 24 hours.');">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Phone (Optional)</label>
+            <input type="tel">
+          </div>
+          
+          <div class="form-group">
+            <label>How can we help?</label>
+            <textarea rows="4" placeholder="Tell us about your child and your goals..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message →
+          </button>
+        </form>
+      </div>
+      
+      <div>
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3>Quick Support</h3>
+          <p style="margin-bottom: 1rem;">Get help when you need it:</p>
+          <ul style="padding-left: 1.5rem; line-height: 2;">
+            <li>📧 Email: support@smartchildbuddy.com</li>
+            <li>📱 Text: (555) 123-4567</li>
+            <li>💬 Live Chat: Available 9am-6pm EST</li>
+            <li>📹 Video Consultations Available</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3>Join Our Community</h3>
+          <p>Connect with 10,000+ parents on the same journey:</p>
+          <div style="margin-top: 1rem;">
+            <a href="#" class="btn btn-success" style="width: 100%;">
+              Join Facebook Group →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">
+              <span style="color: white;">✨</span>
+            </div>
+            Smart Child Buddy
+          </div>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            Empowering parents to become their child's most effective therapist. 
+            Science-based, parent-led, life-changing.
+          </p>
+        </div>
+        
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#reflex-academy">Reflex Academy</a>
+            <a href="#free-assessment">Free Assessment</a>
+            <a href="#exercises">Exercise Library</a>
+            <a href="#smart-calendar">Smart Calendar</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="#parent-guides">Parent Guides</a>
+            <a href="#success-stories">Success Stories</a>
+            <a href="#blog">Blog</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="#contact">Contact Us</a>
+            <a href="#">Facebook Group</a>
+            <a href="#">YouTube Channel</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(147, 51, 234, 0.1); margin-top: 2rem;">
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          © 2025 Smart Child Buddy. All rights reserved. | 
+          <a href="#" style="color: var(--text-muted);">Privacy Policy</a> | 
+          <a href="#" style="color: var(--text-muted);">Terms of Service</a>
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+          Educational information only. Not medical advice. Consult your pediatrician for medical concerns.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Show assessment results
+    function showResults() {
+      const results = document.getElementById('assessment-results');
+      results.style.display = 'block';
+      results.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Toggle accordion
+    function toggleAccordion(element) {
+      const item = element.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(accItem => {
+        accItem.classList.remove('active');
+      });
+      
+      // Open clicked if wasn't active
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      const nav = document.querySelector('.main-nav');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.position = 'absolute';
+        nav.style.top = '60px';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.background = 'white';
+        nav.style.flexDirection = 'column';
+        nav.style.padding = '1rem';
+        nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
