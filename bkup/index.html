@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="canonical" href="https://smartchildbuddy.com/" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Smart Child Buddy - Parents Are The Real Therapists | Reflex Integration & Child Development</title>
@@ -672,6 +671,39 @@
       }
     }
   </style>
+
+  <style>
+    :root{
+      --ink:#0f172a;--muted:#64748b;--brand:#7c3aed;--brand2:#ec4899;--accent:#10b981;--soft:#f8fafc;--bg:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.6;color:var(--ink);background:linear-gradient(180deg,#ffffff 0%,#faf5ff 60%,#f8fafc 100%);} 
+    a{color:var(--brand);text-decoration:none}
+    header{position:sticky;top:0;background:#fff8;backdrop-filter:saturate(120%) blur(10px);border-bottom:1px solid #e9d5ff;z-index:10}
+    .wrap{max-width:1100px;margin:auto;padding:0 16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:800}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:white;box-shadow:0 6px 20px #7c3aed33}
+    .btn{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:10px 14px;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+    .btn.secondary{background:#fff;color:var(--brand);border:1px solid #ddd6fe}
+    footer{margin-top:36px;background:#fff;border-top:1px solid #e5e7eb;color:#475569}
+    .footer-wrap{max-width:1100px;margin:auto;padding:28px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:18px}
+    .footer-brand{display:flex;gap:12px;align-items:flex-start}
+    .logo-badge.small{width:30px;height:30px;border-radius:10px}
+    .footer-links a{display:block;margin:6px 0;color:#334155}
+    .footer-legal a{display:block;margin:6px 0;color:#334155}
+    .icons{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:#f1f5f9;border:1px solid #e2e8f0}
+    .icon svg{width:16px;height:16px;fill:#475569}
+    .payments{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pay{height:26px;padding:4px 8px;border-radius:6px;border:1px solid #e2e8f0;background:#f8fafc;color:#334155;font-weight:700;font-size:12px}
+    .subfooter{border-top:1px solid #e5e7eb;padding:12px 16px}
+    .subfooter-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .mini-card{border:1px solid #e5e7eb;border-radius:12px;padding:12px;background:#fff;display:block}
+    .mini-card h4{margin:6px 0 4px;font-size:16px}
+  </style>
+
 </head>
 <body>
   <!-- Header -->
@@ -701,7 +733,7 @@
         </div>
         
         <div class="nav-item">
-          <a href="/reflexes.html" class="nav-link">All About Reflexes<span style="font-size: 0.8rem;">▼</span></a>
+          <a href="#reflex-academy" class="nav-link">REFLEX ACADEMY <span style="font-size: 0.8rem;">▼</span></a>
           <div class="dropdown">
             <a href="#what-are-reflexes" class="dropdown-link">What Are Reflexes?</a>
             <a href="#test-at-home" class="dropdown-link">Test at Home</a>
@@ -776,7 +808,7 @@
     
     <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
       <a href="#free-assessment" class="btn btn-primary">Start Free Assessment →</a>
-      <a href="/reflexes.html" class="btn btn-secondary">Learn More About Reflexes</a>
+      <a href="#reflex-academy" class="btn btn-secondary">Learn About Reflexes</a>
     </div>
     
     <!-- Stats -->
@@ -800,19 +832,7 @@
     </div>
   </section>
 
-  
-<section class="section container" id="reflex-teaser">
-  <div class="section-header">
-    <h2>All About Reflexes</h2>
-    <p class="section-subtitle">
-      Understand primitive reflexes in simple words. Learn why they matter, how they shape growth, and explore gentle home activities.
-    </p>
-  </div>
-  <div class="cta" style="text-align:center;margin-top:12px;">
-    <a class="btn btn-primary" href="/reflexes.html">Learn More →</a>
-  </div>
-</section>
-<!-- Three Pillars -->
+  <!-- Three Pillars -->
   <section class="section container">
     <div class="section-header">
       <h2>Your Journey to Success</h2>
@@ -824,7 +844,7 @@
         <div class="pillar-icon">🧠</div>
         <h3>1. Understand</h3>
         <p>Learn about primitive reflexes and how they affect your child's behavior, speech, and development.</p>
-        <a href="/reflexes.html" class="btn btn-secondary" style="margin-top: 1rem;">Explore Reflexes</a>
+        <a href="#reflex-academy" class="btn btn-secondary" style="margin-top: 1rem;">Explore Reflexes</a>
       </div>
       
       <div class="pillar card">
@@ -880,7 +900,169 @@
   </section>
 
   <!-- Reflex Academy Section -->
-  
+  <section class="section container" id="reflex-academy">
+    <div class="section-header">
+      <h2>Reflex Academy</h2>
+      <p class="section-subtitle">Master the science of primitive reflexes and unlock your child's potential</p>
+    </div>
+    
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>What Are Reflexes?</h3>
+        <p>Primitive reflexes are automatic movements that should integrate by age 1. When retained, they cause developmental delays.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Test at Home</h3>
+        <p>Simple 5-minute tests you can do at home to identify which reflexes are affecting your child.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Complete Library</h3>
+        <p>Detailed guides on all 7 major reflexes, their symptoms, and integration exercises.</p>
+      </div>
+    </div>
+    
+    <!-- Reflex Library -->
+    <h3 style="margin: 3rem 0 2rem; text-align: center;">The 7 Major Primitive Reflexes</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Moro Reflex</strong> - The Startle Response</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> The infant startle response that should integrate by 4-6 months.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Anxiety and emotional outbursts</li>
+            <li>Sensitivity to light, sound, touch</li>
+            <li>Motion sickness</li>
+            <li>Poor impulse control</li>
+            <li>Difficulty with transitions</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Deep pressure, rhythmic rocking, starfish exercise, breathing techniques</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>ATNR</strong> - Asymmetrical Tonic Neck Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> When head turns, same-side arm extends, opposite arm bends.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor handwriting and fine motor skills</li>
+            <li>Difficulty crossing midline</li>
+            <li>Reading and tracking problems</li>
+            <li>Poor hand-eye coordination</li>
+            <li>Balance issues</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Cross-crawl, lazy 8s, midline crossing activities</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>STNR</strong> - Symmetrical Tonic Neck Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Head position affects arm and leg tone when on hands and knees.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor posture (slumping at desk)</li>
+            <li>Messy eating habits</li>
+            <li>Difficulty sitting still</li>
+            <li>W-sitting position</li>
+            <li>Clumsiness</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Cat-cow stretches, crawling games, wall push-ups</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Spinal Galant</strong> - Back Sensitivity Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Stroking the lower back causes hip rotation to same side.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Bedwetting past age 5</li>
+            <li>Fidgeting and hyperactivity</li>
+            <li>Attention difficulties</li>
+            <li>Sensitivity to clothing tags/waistbands</li>
+            <li>Poor concentration when sitting</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Snow angels, back brushing, swimming movements</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>TLR</strong> - Tonic Labyrinthine Reflex</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Head position affects muscle tone throughout body.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor balance and coordination</li>
+            <li>Motion sickness</li>
+            <li>Difficulty judging space and distance</li>
+            <li>Poor muscle tone</li>
+            <li>Difficulty with sequencing</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Rolling activities, balance board, vestibular activities</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Palmar & Plantar</strong> - Grasp Reflexes</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Automatic grasping when palm or sole is touched.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Poor pencil grip</li>
+            <li>Messy handwriting</li>
+            <li>Speech articulation issues</li>
+            <li>Toe walking</li>
+            <li>Difficulty with fine motor tasks</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Hand exercises, barefoot activities, finger games</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span><strong>Rooting & Suck</strong> - Oral Reflexes</span>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>What it is:</strong> Infant feeding reflexes for survival.</p>
+          <p><strong>Signs if retained:</strong></p>
+          <ul style="padding-left: 1.5rem;">
+            <li>Speech delays and articulation problems</li>
+            <li>Picky eating or texture issues</li>
+            <li>Drooling past appropriate age</li>
+            <li>Thumb sucking past age 5</li>
+            <li>Difficulty with oral motor control</li>
+          </ul>
+          <p><strong>Integration exercises:</strong> Oral motor exercises, blowing activities, chewing exercises</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Assessment Hub -->
   <section class="section" style="background: white;" id="assessment">
@@ -1301,7 +1483,7 @@
         <div>
           <h4>Quick Links</h4>
           <div class="footer-links">
-            <a href="/reflexes.html">All About Reflexes</a>
+            <a href="#reflex-academy">Reflex Academy</a>
             <a href="#free-assessment">Free Assessment</a>
             <a href="#exercises">Exercise Library</a>
             <a href="#smart-calendar">Smart Calendar</a>
@@ -1397,3 +1579,70 @@
   </script>
 </body>
 </html>
+  <!-- UNIVERSAL FOOTER -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <span class="logo-badge small">✨</span>
+        <div>
+          <strong>Smart Child Buddy</strong>
+          <p style="margin:6px 0;color:#475569;">Parent‑led. Science‑informed. Big on kindness.</p>
+          <div class="icons" aria-label="Social links">
+            <a class="icon" href="#" title="Facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12"/></svg>
+            </a>
+            <a class="icon" href="#" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-1.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+            </a>
+            <a class="icon" href="#" title="YouTube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .6 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.3.6 9.3.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 9.8l6.3 3.7-6.3 3.7z"/></svg>
+            </a>
+            <a class="icon" href="#" title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.5 3H3.5A1.5 1.5 0 0 0 2 4.5v15A1.5 1.5 0 0 0 3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 20.5 3zM8.3 18.4H5.8V10h2.5v8.4zM7 8.8A1.5 1.5 0 1 1 7 5.8 1.5 1.5 0 0 1 7 8.8zM18.2 18.4h-2.5v-4.5c0-1.1-.4-1.8-1.4-1.8-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.8v4.5h-2.5V10h2.4v1.1c.3-.5 1-1.3 2.3-1.3 1.7 0 3.1 1.1 3.1 3.6v5z"/></svg>
+            </a>
+          </div>
+          <div class="payments" aria-label="Payment methods">
+            <span class="pay" title="Visa">VISA</span>
+            <span class="pay" title="Mastercard">MASTERCARD</span>
+            <span class="pay" title="American Express">AMEX</span>
+            <span class="pay" title="PayPal">PayPal</span>
+            <span class="pay" title="Stripe">Stripe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <strong>Quick Links</strong>
+        <a href="/index.html">Home</a>
+        <a href="/reflexes.html">All Reflexes</a>
+        <a href="/index.html#assessment">Start Assessment</a>
+        <a href="/index.html#exercises">Exercises</a>
+        <a href="/index.html#contact">Contact</a>
+      </div>
+
+      <div class="footer-legal">
+        <strong>Legal</strong>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+
+      <div>
+        <strong>Newsletter</strong>
+        <p style="margin:6px 0;color:#475569;">Get tips for playful routines and progress tracking.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! We will be in touch.')" aria-label="Newsletter form">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input type="email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:10px;border:1px solid #e2e8f0;border-radius:10px">
+            <button class="btn" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="subfooter">
+      <div class="subfooter-inner">
+        <span>© 2025 Smart Child Buddy</span>
+        <span>Made with ❤️ for parents and kids</span>
+      </div>
+    </div>
+  </footer>
