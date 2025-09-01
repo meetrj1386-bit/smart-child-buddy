@@ -29,86 +29,55 @@ const InfoFormPage = () => {
     setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
   };
 
+ 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-console.log("1. Form submitted");
+  e.preventDefault();
+  console.log("1. Form submitted");
   console.log("2. Form data:", formData);
-    const {
-      parentName,
-      email,
-      phone,
-      childFirstName,
-      childLastName,
-      age,
-      gender,
-      mainConcerns,
-      file
-    } = formData;
 
-    const assessmentId = uuidv4();
-     console.log("3. Generated ID:", assessmentId);
-    setIsSubmitting(true);
+  const assessmentId = uuidv4();
+  console.log("3. Generated ID:", assessmentId);
+  setIsSubmitting(true);
 
-    try {
-          console.log("4. Attempting Supabase insert...");
-
-      const { error: insertError } = await supabase.from("assessments").insert([
-        {
-          id: assessmentId,
-          parent_name: parentName,
-          parent_email: email,
-          parent_phone: phone,
-          child_first_name: childFirstName,
-          child_last_name: childLastName,
-          child_age: parseInt(age),
-          child_gender: gender,
-          parent_concerns: mainConcerns,
-          responses: {},
-          narrative_json: {},
-          status: "in_progress"
-        }
-      ]);
-
-          console.log("5. Insert response - Data:", data, "Error:", insertError);
-
-
-      if (insertError) {
-        console.error("Insert error:", insertError);
-        setIsSubmitting(false);
-        return;
+  try {
+    console.log("4. Attempting Supabase insert...");
+    const { error: insertError } = await supabase.from("assessments").insert([
+      {
+        id: assessmentId,
+        parent_name: formData.parentName,
+        parent_email: formData.email,
+        parent_phone: formData.phone,
+        child_first_name: formData.childFirstName,
+        child_last_name: formData.childLastName,
+        child_age: parseInt(formData.age),
+        child_gender: formData.gender,
+        parent_concerns: formData.mainConcerns,
+        responses: {},
+        narrative_json: {},
+        status: "in_progress"
       }
+    ]);
 
-      if (file) {
-        const filePath = `${assessmentId}/${file.name}`;
-        const { error: storageError } = await supabase.storage
-          .from("assessment-files")
-          .upload(filePath, file);
+    console.log("5. Insert response - Error:", insertError);
 
-        if (!storageError) {
-          const fileUrl = supabase.storage.from("assessment-files").getPublicUrl(filePath).data.publicUrl;
-          const { error: fileInsertError } = await supabase.from("uploaded_files").insert([
-            {
-              assessment_id: assessmentId,
-              file_name: file.name,
-              file_url: fileUrl,
-              file_type: file.type
-            }
-          ]);
-
-          if (fileInsertError) {
-            console.error("File insert error:", fileInsertError);
-          }
-        } else {
-          console.error("Storage error:", storageError);
-        }
-      }
-
-      navigate(`/assessment/${assessmentId}`);
-    } catch (err) {
-      console.error("Unexpected error:", err);
+    if (insertError) {
+      console.error("6. Insert failed:", insertError);
+      alert(`Database error: ${insertError.message}`);
       setIsSubmitting(false);
+      return;
     }
-  };
+
+    console.log("7. Insert successful, navigating...");
+    
+    // File upload code here if needed...
+    
+    navigate(`/assessment/${assessmentId}`);
+  } catch (err) {
+    console.error("8. Unexpected error:", err);
+    alert(`Error: ${err.message}`);
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #faf8f5 0%, #f5f2ed 100%)' }}>
@@ -345,30 +314,27 @@ console.log("1. Form submitted");
                 <label className="block text-sm font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '0.025em' }}>
                   Gender *
                 </label>
-                <select
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg transition-all appearance-none"
-                  style={{ 
-                    border: '2px solid #e2e8f0',
-                    background: 'white',
-                    outline: 'none',
-                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                    backgroundPosition: 'right 0.5rem center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: '1.5em 1.5em',
-                    paddingRight: '2.5rem'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = '#87a08e'}
-                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-                >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
+              
+              <select
+  name="gender"
+  value={formData.gender}
+  onChange={handleChange}
+  required
+  className="w-full px-4 py-3 rounded-lg transition-all appearance-none"
+  style={{ 
+    border: '2px solid #e2e8f0',
+    background: 'white',
+    outline: 'none',
+    // ... rest of styles
+  }}
+  onFocus={(e) => e.target.style.borderColor = '#87a08e'}
+  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+>
+  <option value="">Select Gender</option>
+  <option value="boy">Boy</option>
+  <option value="girl">Girl</option>
+</select>
+
               </div>
             </div>
           </div>
