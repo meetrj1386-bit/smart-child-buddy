@@ -144,21 +144,23 @@ const InfoFormPage = () => {
 
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8 py-12">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl mb-2" 
-              style={{ 
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-                fontWeight: '250',
-                letterSpacing: '-0.02em',
-                color: '#2c2c2c' 
-              }}>
-            Tell Us About Your Child
-          </h1>
-          <p className="text-lg" style={{ color: '#5a5a5a', fontWeight: '300' }}>
-            Complete this form to begin the personalized assessment journey
-          </p>
-        </div>
+     
+     {/* Header Section */}
 
+
+{/* Header Section - Remove duplicate logo, keep it simple */}
+<div className="text-center mb-8">
+  <h1 className="text-3xl lg:text-4xl mb-2 font-semibold" 
+      style={{ 
+        fontFamily: "'Playfair Display', Georgia, serif",
+        color: '#2c2c2c' 
+      }}>
+    Tell Us About Your Child
+  </h1>
+  <p className="text-base" style={{ color: '#5a5a5a' }}>
+    Complete this form to begin the personalized assessment journey
+  </p>
+</div>
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Section 1: Parent Information */}
           <div className="p-8" style={{ 
@@ -381,89 +383,118 @@ const InfoFormPage = () => {
           </div>
           
           <div className="p-8" style={{ background: 'rgba(212, 165, 116, 0.03)' }}>
-            <div className="mb-6">
-              <label className="block text-sm font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '0.025em' }}>
-                Main Concerns
-              </label>
-              <textarea
-                name="mainConcerns"
-                value={formData.mainConcerns}
-                onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg transition-all resize-none"
-                style={{ 
-                  border: '2px solid #e2e8f0',
-                  background: 'white',
-                  outline: 'none',
-                  minHeight: '120px'
-                }}
-                rows="4"
-                placeholder="What concerns you most about your child's development? Share any observations or specific areas you'd like us to assess..."
-                onFocus={(e) => e.target.style.borderColor = '#d4a574'}
-                onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
-              />
-              <p className="text-xs mt-2" style={{ color: '#8b8b8b' }}>
-                The more details you provide, the better we can personalize the assessment
-              </p>
-            </div>
+        <div className="mb-6">
+  <label className="block text-sm font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '0.025em' }}>
+    Main Concerns & Development Areas
+  </label>
+  <div className="mb-3 flex flex-wrap gap-2">
+    <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(107, 91, 149, 0.1)', color: '#6b5b95' }}>
+      Speech & Language
+    </span>
+    <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(135, 160, 142, 0.1)', color: '#87a08e' }}>
+      Behavior & Social Skills
+    </span>
+    <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(212, 165, 116, 0.1)', color: '#d4a574' }}>
+      Motor Skills
+    </span>
+    <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(107, 91, 149, 0.1)', color: '#6b5b95' }}>
+      Sensory Processing
+    </span>
+    <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(135, 160, 142, 0.1)', color: '#87a08e' }}>
+      Learning & Attention
+    </span>
+  </div>
+  <textarea
+    name="mainConcerns"
+    value={formData.mainConcerns}
+    onChange={handleChange}
+    className="w-full px-4 py-3 rounded-lg transition-all resize-none"
+    style={{ 
+      border: '2px solid #e2e8f0',
+      background: 'white',
+      outline: 'none',
+      minHeight: '120px'
+    }}
+    rows="4"
+    placeholder="Please share your concerns about your child's development. Consider areas like:
+- Speech delays or communication challenges
+- Behavioral concerns or emotional regulation
+- Physical coordination or motor skills
+- Sensory sensitivities or processing issues
+- Learning difficulties or attention challenges
+- Social interaction or play skills"
+    onFocus={(e) => e.target.style.borderColor = '#d4a574'}
+    onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
+  />
+  <p className="text-xs mt-2" style={{ color: '#8b8b8b' }}>
+    The more specific you are, the better we can tailor our assessment to your child's unique needs
+  </p>
+</div>
 
-            <div>
-              <label className="block text-sm font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '0.025em' }}>
-                Upload Documents (optional)
-              </label>
-              <div className="relative">
-                <input
-                  type="file"
-                  accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  id="file-upload"
-                />
-                <label
-                  htmlFor="file-upload"
-                  className="block w-full p-8 rounded-lg text-center cursor-pointer transition-all group"
-                  style={{ 
-                    border: '2px dashed #d4a574',
-                    background: 'rgba(212, 165, 116, 0.02)'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = 'rgba(212, 165, 116, 0.08)';
-                    e.currentTarget.style.borderColor = '#6b5b95';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'rgba(212, 165, 116, 0.02)';
-                    e.currentTarget.style.borderColor = '#d4a574';
-                  }}
-                >
-                  {formData.file ? (
-                    <div className="space-y-2">
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto"
-                           style={{ background: 'linear-gradient(135deg, #87a08e, #6b5b95)' }}>
-                        <span className="text-2xl">✓</span>
-                      </div>
-                      <p className="font-medium" style={{ color: '#4a5568' }}>
-                        {formData.file.name}
-                      </p>
-                      <p className="text-xs" style={{ color: '#8b8b8b' }}>
-                        Click to change file
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto transition-all"
-                           style={{ background: 'rgba(107, 91, 149, 0.1)' }}>
-                        <span className="text-2xl">📎</span>
-                      </div>
-                      <p className="font-medium" style={{ color: '#4a5568' }}>
-                        Click to upload or drag and drop
-                      </p>
-                      <p className="text-xs" style={{ color: '#8b8b8b' }}>
-                        PDF, Word, or Image files (Max 10MB)
-                      </p>
-                    </div>
-                  )}
-                </label>
-              </div>
-            </div>
+<div>
+  <label className="block text-sm font-medium mb-3" style={{ color: '#4a5568', letterSpacing: '0.025em' }}>
+    Upload Assessment Reports (optional)
+  </label>
+  <p className="text-xs mb-3" style={{ color: '#718096' }}>
+    Have previous evaluations? Upload any Speech, OT, PT, ABA, or psychological assessment reports to help us better understand your child's needs.
+  </p>
+  <div className="relative">
+    <input
+      type="file"
+      accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+      onChange={handleFileChange}
+      className="hidden"
+      id="file-upload"
+    />
+    <label
+      htmlFor="file-upload"
+      className="block w-full p-8 rounded-lg text-center cursor-pointer transition-all group"
+      style={{ 
+        border: '2px dashed #d4a574',
+        background: 'rgba(212, 165, 116, 0.02)'
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.background = 'rgba(212, 165, 116, 0.08)';
+        e.currentTarget.style.borderColor = '#6b5b95';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.background = 'rgba(212, 165, 116, 0.02)';
+        e.currentTarget.style.borderColor = '#d4a574';
+      }}
+    >
+      {formData.file ? (
+        <div className="space-y-2">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto"
+               style={{ background: 'linear-gradient(135deg, #87a08e, #6b5b95)' }}>
+            <span className="text-2xl">✓</span>
+          </div>
+          <p className="font-medium" style={{ color: '#4a5568' }}>
+            {formData.file.name}
+          </p>
+          <p className="text-xs" style={{ color: '#8b8b8b' }}>
+            Click to change file
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto transition-all"
+               style={{ background: 'rgba(107, 91, 149, 0.1)' }}>
+            <span className="text-2xl">📎</span>
+          </div>
+          <p className="font-medium" style={{ color: '#4a5568' }}>
+            Upload Previous Assessments
+          </p>
+          <p className="text-xs" style={{ color: '#8b8b8b' }}>
+            Speech, OT, PT, ABA, Psychological Reports
+          </p>
+          <p className="text-xs" style={{ color: '#8b8b8b' }}>
+            PDF, Word, or Image files (Max 10MB)
+          </p>
+        </div>
+      )}
+    </label>
+  </div>
+</div>
           </div>
 
           {/* Submit Section */}
