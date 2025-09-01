@@ -5,3 +5,4 @@ dist
 TherapyCalendarMobile
 .DS_Store
 backup__AssesssmentPage.jsx
+supabase/
