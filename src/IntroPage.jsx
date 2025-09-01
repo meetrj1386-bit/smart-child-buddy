@@ -2,6 +2,108 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
+// --- NEW: How It Works (3-step) ---
+const HowItWorks = ({ onStart }) => (
+  <section id="how-it-works" className="py-14 px-6 lg:px-12">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-3xl lg:text-4xl font-light text-center mb-3"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#2c2c2c' }}>
+        How Smart Child Buddy Works
+      </h2>
+      <p className="text-center text-base mb-10" style={{ color: '#5a5a5a' }}>
+        A simple 3-step journey to uncover your child’s hidden potential.
+      </p>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {/* Step 1 */}
+        <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+             style={{ background: 'linear-gradient(135deg, rgba(107,91,149,0.06), rgba(135,160,142,0.06))' }}>
+          <div className="text-4xl mb-3">📝</div>
+          <h3 className="text-xl font-semibold mb-2" style={{ color: '#6b5b95' }}>Tell Us About Your Child</h3>
+          <p className="text-sm" style={{ color: '#5a5a5a' }}>
+            2-minute form with age, concerns, and basics. No login needed.
+          </p>
+        </div>
+
+        {/* Step 2 */}
+        <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+             style={{ background: 'linear-gradient(135deg, rgba(212,165,116,0.06), rgba(107,91,149,0.06))' }}>
+          <div className="text-4xl mb-3">🧠</div>
+          <h3 className="text-xl font-semibold mb-2" style={{ color: '#d4a574' }}>Smart AI-Powered Assessment</h3>
+          <p className="text-sm" style={{ color: '#5a5a5a' }}>
+            Personalized questions based on age & concerns. Takes ~15 minutes.
+          </p>
+        </div>
+
+        {/* Step 3 */}
+        <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+             style={{ background: 'linear-gradient(135deg, rgba(135,160,142,0.06), rgba(212,165,116,0.06))' }}>
+          <div className="text-4xl mb-3">📄</div>
+          <h3 className="text-xl font-semibold mb-2" style={{ color: '#87a08e' }}>Get Your Reflex Report</h3>
+          <p className="text-sm" style={{ color: '#5a5a5a' }}>
+            Clear insights, reflex mapping, and a step-by-step roadmap you can start today.
+          </p>
+        </div>
+      </div>
+
+      <div className="text-center mt-8">
+        <button
+          onClick={onStart}
+          className="px-8 py-3 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+          style={{ background: 'linear-gradient(135deg, #6b5b95, #87a08e)' }}
+        >
+          Start My Assessment
+        </button>
+      </div>
+    </div>
+  </section>
+);
+
+// --- NEW: Trust & Social Proof strip ---
+const TrustStrip = () => (
+  <section className="py-10 px-6 lg:px-12 bg-white/80 backdrop-blur-sm">
+    <div className="max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { icon: '👨‍👩‍👧‍👦', big: '1,000+', small: 'Families Helped' },
+          { icon: '🧩', big: '8', small: 'Reflex Patterns' },
+          { icon: '⏱️', big: '15 min', small: 'Avg. Time' },
+          { icon: '⭐', big: '4.9/5', small: 'Parent Ratings' },
+        ].map((s, i) => (
+          <div key={i} className="text-center rounded-2xl p-6 shadow-md"
+               style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(254,245,240,0.6))' }}>
+            <div className="text-2xl mb-1">{s.icon}</div>
+            <div className="text-2xl font-semibold"
+                 style={{ background: 'linear-gradient(135deg, #6b5b95, #87a08e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              {s.big}
+            </div>
+            <div className="text-xs uppercase tracking-wider" style={{ color: '#718096' }}>{s.small}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// --- NEW: Pricing clarity banner ---
+const PricingBanner = ({ onStart }) => (
+  <section className="py-8 px-6 lg:px-12">
+    <div className="max-w-5xl mx-auto rounded-2xl p-6 text-center shadow-lg"
+         style={{ background: 'linear-gradient(135deg, rgba(107,91,149,0.08), rgba(212,165,116,0.08))' }}>
+      <p className="text-base mb-4" style={{ color: '#5a5a5a' }}>
+        <span className="font-semibold" style={{ color: '#6b5b95' }}>Simple pricing:</span> just <span className="font-semibold">$10–$15</span> per assessment — no subscriptions, no hidden fees.
+      </p>
+      <button
+        onClick={onStart}
+        className="px-6 py-2.5 text-sm font-medium text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all"
+        style={{ background: 'linear-gradient(135deg, #6b5b95, #87a08e)' }}
+      >
+        Start for $10–$15
+      </button>
+    </div>
+  </section>
+);
+
 
 export default function IntroPage() {
   const navigate = useNavigate();
@@ -58,7 +160,7 @@ export default function IntroPage() {
             {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#problems" className="text-sm font-medium text-gray-700 hover:text-purple-700 transition-colors">Common Patterns</a>
-              <a href="#how" className="text-sm font-medium text-gray-700 hover:text-purple-700 transition-colors">How It Works</a>
+              <a href="#how-it-works" className="text-sm font-medium text-gray-700 hover:text-purple-700 transition-colors">How It Works</a>
               <a href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-purple-700 transition-colors">Success Stories</a>
               <button
                 onClick={() => navigate('/info-form')}
@@ -178,6 +280,14 @@ export default function IntroPage() {
           </div>
         </div>
       </section>
+
+
+{/* ↓↓↓ Add these right after the Hero section closing tag */}
+<HowItWorks onStart={() => navigate('/info-form')} />
+<TrustStrip />
+<PricingBanner onStart={() => navigate('/info-form')} />
+
+
 
       {/* Emotional Connection Section - NEW */}
       <section className="py-16 px-6 lg:px-12 bg-white/90 backdrop-blur-sm">
@@ -1185,9 +1295,27 @@ export default function IntroPage() {
             </a>
           </li>
           <li>
-            <a href="#how" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
-              How It Works
-            </a>
+      
+<a
+  href="#how-it-works"
+  className="text-sm font-medium text-gray-700 hover:text-purple-700 transition-colors"
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const el = document.getElementById('how-it-works');
+    if (!el) return;
+    const headerOffset = 88; // your sticky header height
+    const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    // also fix the URL hash so refresh/deep-links work:
+    history.replaceState(null, '', '#how-it-works');
+  }}
+>
+  How It Works
+</a>
+
+
+
           </li>
           <li>
             <a href="#testimonials" className="text-sm text-gray-600 hover:text-purple-600 transition-colors">
