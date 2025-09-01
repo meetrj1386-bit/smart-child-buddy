@@ -31,7 +31,8 @@ const InfoFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+console.log("1. Form submitted");
+  console.log("2. Form data:", formData);
     const {
       parentName,
       email,
@@ -45,9 +46,12 @@ const InfoFormPage = () => {
     } = formData;
 
     const assessmentId = uuidv4();
+     console.log("3. Generated ID:", assessmentId);
     setIsSubmitting(true);
 
     try {
+          console.log("4. Attempting Supabase insert...");
+
       const { error: insertError } = await supabase.from("assessments").insert([
         {
           id: assessmentId,
@@ -64,6 +68,9 @@ const InfoFormPage = () => {
           status: "in_progress"
         }
       ]);
+
+          console.log("5. Insert response - Data:", data, "Error:", insertError);
+
 
       if (insertError) {
         console.error("Insert error:", insertError);
