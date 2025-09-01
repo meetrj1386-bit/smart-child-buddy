@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[href*="/widget"] * {
+  all: unset;
+  display: revert;
+  box-sizing: border-box;
+}

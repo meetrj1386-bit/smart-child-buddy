@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartChild Buddy Chat</title>
+
+    <!-- your fonts / styles can stay -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root { --scb-radius: 16px; }
+      html,body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .fade-edges { position: relative; }
+      .fade-edges::before,
+      .fade-edges::after {
+        content:""; position:absolute; top:0; bottom:0; width:24px; pointer-events:none;
+      }
+      .fade-edges::before { left:0; background:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0)); }
+      .fade-edges::after  { right:0; background:linear-gradient(to left,  rgba(255,255,255,1), rgba(255,255,255,0)); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- ⬇️ Boot the widget iframe app -->
+    <script type="module" src="/src/AIAgent/chatEntry.jsx"></script>
+  </body>
+</html>
