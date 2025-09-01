@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Helmet } from 'react-helmet-async';
 
 // --- NEW: How It Works (3-step) ---
+
 const HowItWorks = ({ onStart }) => (
+
   <section id="how-it-works" className="py-14 px-6 lg:px-12">
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl lg:text-4xl font-light text-center mb-3"
@@ -56,7 +59,7 @@ const HowItWorks = ({ onStart }) => (
         </button>
       </div>
     </div>
-  </section>
+  </section> 
 );
 
 // --- NEW: Trust & Social Proof strip ---
@@ -128,7 +131,161 @@ export default function IntroPage() {
     // Test functionality preserved
   };
 
+  useEffect(() => {
+  const HEADER_OFFSET = 88; // sticky header height (adjust if needed)
+
+  function scrollToHash(hash, replace = false) {
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    if (replace) window.history.replaceState(null, '', `#${id}`);
+  }
+
+  // 1) On initial load with an existing hash
+  if (window.location.hash) {
+    // slight delay so layout is ready
+    setTimeout(() => scrollToHash(window.location.hash, true), 0);
+  }
+
+  // 2) Intercept clicks on in-page anchors anywhere on the page
+  function onClick(e) {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    // allow only known anchors to be offset-scrolled
+    if (!href || href === '#') return;
+    e.preventDefault();
+    scrollToHash(href, true);
+  }
+
+  document.addEventListener('click', onClick);
+  return () => document.removeEventListener('click', onClick);
+}, []);
+
+
   return (
+
+  <>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <Helmet prioritizeSeoTags>
+    <link rel="icon" href="/favicon.ico" />
+<meta name="theme-color" content="#6b5b95" />
+
+    <title>Smart Child Buddy — Parent-friendly learning about autism, ADHD, speech delay & behavior</title>
+    <meta
+      name="description"
+      content="Smart Child Buddy helps parents understand connections between early development and common concerns like autism, ADHD, speech delay, nonverbal communication, sensory issues, behavior and learning—through a short educational assessment and a clear report."
+    />
+    <meta
+      name="keywords"
+      content="autism, ADHD, speech delay, nonverbal, behavior, sensory processing, occupational therapy, physical therapy, speech therapy, parent education, developmental milestones, learning challenges, handwriting, attention, anxiety, balance, coordination, primitive reflexes, parent guide"
+    />
+    <link rel="canonical" href="https://smartchildbuddy.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Smart Child Buddy" />
+    <meta property="og:url" content="https://smartchildbuddy.com/" />
+    <meta property="og:title" content="Smart Child Buddy — Understand autism, ADHD, speech & behavior with parent-friendly insights" />
+    <meta property="og:description" content="A short, guided, educational assessment for parents—get a clear, friendly report about patterns related to attention, speech, movement, learning and more." />
+    <meta property="og:image" content="https://smartchildbuddy.com/og-cover.jpg" />
+    <meta property="og:image:alt" content="Smart Child Buddy—parent and child learning together" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Smart Child Buddy — Parent-friendly insights for autism, ADHD, speech & behavior" />
+    <meta name="twitter:description" content="Understand common concerns like attention, speech delay, nonverbal communication, sensory and behavior with a short educational assessment." />
+    <meta name="twitter:image" content="https://smartchildbuddy.com/og-cover.jpg" />
+
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="bingbot" content="index,follow" />
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Smart Child Buddy",
+        "url": "https://smartchildbuddy.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://smartchildbuddy.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      })}
+    </script>
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Smart Child Buddy Educational Assessment",
+        "brand": "Smart Child Buddy",
+        "description":
+          "A short, parent-friendly educational assessment with a clear report about attention, speech, behavior, sensory and learning.",
+        "image": ["https://smartchildbuddy.com/og-cover.jpg"],
+        "url": "https://smartchildbuddy.com/",
+        "offers": {
+          "@type": "Offer",
+          "price": "15.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://smartchildbuddy.com/info-form"
+        }
+      })}
+    </script>
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Smart Child Buddy a medical or diagnostic tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Smart Child Buddy is an educational tool to help parents understand development. It does not diagnose or replace professional evaluation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What areas can this help me learn about?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Parents commonly explore attention (ADHD), communication (speech delay or nonverbal), social development (autism), sensory processing, behavior, balance, coordination and handwriting challenges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the educational assessment take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most parents finish in about 10–15 minutes and receive a friendly report right away."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The assessment is a simple one-time payment (typically $10–$15). There are no subscriptions."
+            }
+          }
+        ]
+      })}
+    </script>
+  </Helmet>
+
+
+
+
+    
+
+
+
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #faf8f5 0%, #f5f2ed 100%)' }}>
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -281,6 +438,7 @@ export default function IntroPage() {
         </div>
       </section>
 
+<div id="how" style={{ position: "relative", top: "-96px" }} aria-hidden="true"></div>
 
 {/* ↓↓↓ Add these right after the Hero section closing tag */}
 <HowItWorks onStart={() => navigate('/info-form')} />
@@ -1096,6 +1254,38 @@ export default function IntroPage() {
         </div>
       </section>
 
+      <section id="faq" className="py-12 px-6 lg:px-12 bg-white/70">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-3xl font-light mb-6">Parent FAQs</h2>
+
+    <details className="rounded-lg p-4 mb-3 bg-white shadow">
+      <summary className="font-medium">Is this a diagnostic test?</summary>
+      <p className="mt-2 text-sm text-gray-600">
+        No—this is an educational tool for parents. It does not diagnose or replace professional evaluation.
+      </p>
+    </details>
+
+    <details className="rounded-lg p-4 mb-3 bg-white shadow">
+      <summary className="font-medium">What topics can I learn about?</summary>
+      <p className="mt-2 text-sm text-gray-600">
+        Families often explore autism, ADHD, speech delay or nonverbal communication, sensory processing, behavior,
+        handwriting, balance and coordination.
+      </p>
+    </details>
+
+    <details className="rounded-lg p-4 mb-3 bg-white shadow">
+      <summary className="font-medium">How long does it take?</summary>
+      <p className="mt-2 text-sm text-gray-600">About 10–15 minutes for most parents.</p>
+    </details>
+
+    <details className="rounded-lg p-4 mb-3 bg-white shadow">
+      <summary className="font-medium">What does it cost?</summary>
+      <p className="mt-2 text-sm text-gray-600">A simple one-time payment (typically $10–$15). No subscriptions.</p>
+    </details>
+  </div>
+</section>
+
+
       {/* Footer */}
     
 
@@ -1472,5 +1662,7 @@ export default function IntroPage() {
 </footer>
 
     </div>
+       </>
+
   );
 }
